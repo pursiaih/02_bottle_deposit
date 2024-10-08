@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "timestamp.h"
+
 #define MAXLENGTH 80
 #define MAGICLOOP 1
 
@@ -32,6 +34,7 @@ int main(void){
     while(MAGICLOOP){
         if(strcmp(removeNL(buffer), "item") == 0){
             printf("create new entry.\n");
+            createTimestamp();
         }
         else if(strcmp(removeNL(buffer), "deposit") == 0){
             printf("Calculating total value of bottle deposit and amount of items.\n");
